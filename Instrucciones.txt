@@ -1,0 +1,36 @@
+Ir a la ubicacion donde se queira instalar nodejs y express
+ejecutar los comandos 
+	npm init
+cuando pida el entry point se debe poner app.js
+luego de terminar el init debera instalar express con
+	npm install express
+Instalar CORS proxy para evitar problemas de peticiones fetch inconclusas
+	npm install --save cors
+
+crear un archivo app.js con el siguiente contenido:
+
+------------------------------
+
+var express = require('express');
+var cors = require('cors');
+var app = express();app.use(cors());
+
+app.get('/', function(req, res) {
+  res.send('Hola Mundo!');
+});
+
+app.use(express.static('public'))
+
+app.listen(3000, function() {
+  console.log('Aplicación ejemplo, escuchando el puerto 3000!');
+});
+
+-------------EOF---------------
+
+ejecutar el comando 
+	git clone https://github.com/JaPCeibal/emercado-api.git
+y renombrar la carpeta emercado-api por public
+ejecutar el comando
+	node app.js
+
+probar el sitio web con livepreview de visual o de manera local.

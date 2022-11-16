@@ -1,0 +1,24 @@
+{
+  "name": "ecomercio",
+  "version": "1.0.0",
+  "description": "Servidor local de JaP para la app de comercio",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaPCeibal/emercado-api.git"
+  },
+  "author": "Eduardo Gimeno",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JaPCeibal/emercado-api/issues"
+  },
+  "homepage": "https://github.com/JaPCeibal/emercado-api#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}
