@@ -25,41 +25,7 @@ app.post('/compra', urlencodedParser, function (req, res) {
       console.log(JSON.parse(data));
     });
 })
-
-
-
-
-
-
-//   fs.readFile('./datosUsers.json', 'utf8', function readFileCallback(err, data){
-//     if (err){
-//         console.log(err);
-//     } else {
-//     obj = JSON.parse(data); //now it an object
-//     console.log(data);
-//     obj.push(response); //add some data
-    
-//     json = JSON.stringify(obj); //convert it back to json
-//     console.log(json);
-//     fs.writeFile('./datosUsers.json', json, err => {
-//       if (err) {
-//           console.log('Error writing file', err)
-//       } else {
-//           console.log('Successfully wrote file')
-//       }
-//   }); // write it back 
-// }});
-
-//   const jsonString = JSON.stringify(response, null, 2)
-//   fs.writeFileSync('./datosUsers.json', jsonString, err => {
-//     if (err) {
-//         console.log('Error writing file', err)
-//     } else {
-//         console.log('Successfully wrote file')
-//     }
-// })
-
-  res.end(JSON.stringify(response));  
+  res.end(JSON.stringify("Se recibio y se guardo la informacion, no lo hago mediante JS porque da error de CORS"));  
 })  
 
 
