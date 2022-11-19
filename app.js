@@ -34,6 +34,13 @@ app.post('/compra', urlencodedParser, function (req, res) {
   res.end(JSON.stringify("Se recibio y se guardo la informacion"));  
 })  
 
+app.get('/datos', (req, res) => {
+  fs.readFile('./datosUsers.json', function (err, data) {
+    res.end(JSON.stringify(data))
+})
+
+});
+
 
 app.use(cors());
 app.use(express.static('public'))
