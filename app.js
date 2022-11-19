@@ -15,6 +15,10 @@ app.post('/compra', urlencodedParser, function (req, res) {
       esquina: req.body.esquina
   };  
   console.log(response);
+  const { calle, numero, esquina } = req.body;
+  console.log(calle);
+  console.log(numero);
+  console.log(esquina);
   
   fs.readFile('./datosUsers.json', function (err, data) {
     var json = JSON.parse(data);
@@ -25,7 +29,7 @@ app.post('/compra', urlencodedParser, function (req, res) {
       console.log(JSON.parse(data));
     });
 })
-  res.end(JSON.stringify("Se recibio y se guardo la informacion, no lo hago mediante JS porque da error de CORS"));  
+  res.end(JSON.stringify("Se recibio y se guardo la informacion"));  
 })  
 
 
