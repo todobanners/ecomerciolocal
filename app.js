@@ -8,6 +8,8 @@ const fs = require('fs')
 var urlencodedParser = bodyParser.urlencoded({ extended: false })  
 
 app.post('/compra', urlencodedParser, function (req, res) {  
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   // Prepare output in JSON format  
   response = {  
       calle: req.body.calle,  
