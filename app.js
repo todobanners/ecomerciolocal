@@ -36,7 +36,7 @@ app.post('/compra', urlencodedParser, function (req, res) {
 
 app.get('/datos', (req, res) => {
   fs.readFile('./datosUsers.json', function (err, data) {
-    res.end(JSON.stringify(data))
+    res.end(JSON.parse(data))
 })
 
 });
