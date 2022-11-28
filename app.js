@@ -25,7 +25,7 @@ app.post('/compra', urlencodedParser, function (req, res) {
       console.log(JSON.parse(data));
     });
 })
-  res.end(JSON.stringify("Se recibio y se guardo la informacion, ve a /datos para ver todos los registros"));  
+  res.end(JSON.stringify("Se recibio y se guardo la informacion, ve a https://ecomerciojap.onrender.com/datos para ver todos los registros"));  
 })  
 
 app.get('/datos', (req, res) => {
