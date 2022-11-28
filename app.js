@@ -8,8 +8,6 @@ const fs = require('fs')
 var urlencodedParser = bodyParser.urlencoded({ extended: false })  
 
 app.post('/compra', urlencodedParser, function (req, res) {  
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   // Prepare output in JSON format  
   response = {  
       calle: req.body.calle,  
@@ -17,10 +15,6 @@ app.post('/compra', urlencodedParser, function (req, res) {
       esquina: req.body.esquina
   };  
   console.log(response);
-  const { calle, numero, esquina } = req.body;
-  console.log(calle);
-  console.log(numero);
-  console.log(esquina);
   
   fs.readFile('./datosUsers.json', function (err, data) {
     var json = JSON.parse(data);
@@ -31,17 +25,17 @@ app.post('/compra', urlencodedParser, function (req, res) {
       console.log(JSON.parse(data));
     });
 })
-  res.end(JSON.stringify("Se recibio y se guardo la informacion"));  
+  res.end(JSON.stringify("Se recibio y se guardo la informacion, ve a /datos para ver todos los registros"));  
 })  
 
 app.get('/datos', (req, res) => {
   fs.readFile('./datosUsers.json', function (err, data) {
+    res.setHeader('Content-Type', 'application/json');
     var json = JSON.parse(data);
     res.end(JSON.stringify(json));
 })
 
 });
-
 
 app.use(cors());
 app.use(express.static('public'))
